@@ -4,7 +4,7 @@ const GoogleDocsPage = new Page();
 describe('Try accessing a spreadsheet from an unreliable browser', () => {
     it('should redirect to Google Support', async () => {
         const path = 'spreadsheets/d'
-        const id = '1rkIMlCCocewAbB-KEAsB4ToBh5TAtNq9pWznTsg7D5U'
+        const id = '1wV_b5TnfUw-9s-KzqhTHluDfVMkb2lQTLNUfty0ufnw'
 
         const email = 'aslongasitworks@gmail.com'
 
