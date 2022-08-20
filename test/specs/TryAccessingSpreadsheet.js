@@ -23,7 +23,7 @@ describe('Try accessing a spreadsheet from an unreliable browser', () => {
         await next_button.click() // click the 'next' button
 
         const warning = await $('#headingText')
-        await warning.waitForDisplayed({timeout: 6000})
+        await browser.pause(1200)
         await expect(warning).toExist() // check if the form contents have changed
 
         const retry_button = await $('#next')
@@ -32,12 +32,12 @@ describe('Try accessing a spreadsheet from an unreliable browser', () => {
         await retry_button.click() // click the 'retry' button
 
         await expect(login_input).toExist() // check if the login input is present
-        await login_input.waitForDisplayed({timeout: 6000})
+        await browser.pause(1200)
         await login_input.setValue(email)
         await expect(login_input).toHaveValue(email) // enter email again
 
         await next_button.click() // click the 'next' button again
-        await warning.waitForDisplayed({timeout: 6000})
+        await browser.pause(1200)
         await expect(warning).toExist() // check if the form contents have changed again
 
         const more_link = await $('a[href*="support.google.com"]')
@@ -49,7 +49,7 @@ describe('Try accessing a spreadsheet from an unreliable browser', () => {
         expect(support_url).toBeRequested() // check if the right support article is requested
 
         const article_header = await $('#article-container > h1')
-        await article_header.waitForDisplayed({timeout: 3000})
+        await browser.pause(1200)
         expect(article_header).toExist() // check if the header is present
         expect(article_header).toHaveText('Як увійти в обліковий запис у сумісному веб-переглядачі') // check if the header matches
 
